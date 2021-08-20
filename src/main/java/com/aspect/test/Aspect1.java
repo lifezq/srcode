@@ -2,12 +2,7 @@ package com.aspect.test;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.AfterThrowing;
-import org.aspectj.lang.annotation.Around;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.*;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
@@ -21,7 +16,7 @@ public class Aspect1 {
         System.out.println("[Aspect1] before advise");
     }
 
-    @Around(value = "com.aspect.test.PointCuts.aopDemo())")
+    @Around(value = "com.aspect.test.PointCuts.aopDemo()")
     public void around(ProceedingJoinPoint pjp) throws Throwable {
         System.out.println("[Aspect1] around advise 1");
         pjp.proceed();
