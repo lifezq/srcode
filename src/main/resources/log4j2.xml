@@ -2,7 +2,7 @@
 <Configuration status="fatal">
     <!--打印在本地，根据具体存储地址填写-->
     <Properties>
-        <Property name="baseDir" value="./"/>
+        <Property name="baseDir" value="./logs/"/>
     </Properties>
 
     <Appenders>
