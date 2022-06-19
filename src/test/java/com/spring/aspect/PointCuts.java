@@ -1,4 +1,4 @@
-package com.aspect.test;
+package com.spring.aspect;
 
 import org.aspectj.lang.annotation.Pointcut;
 

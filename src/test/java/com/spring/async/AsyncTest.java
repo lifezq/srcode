@@ -1,4 +1,4 @@
-package com.record.srcode.tests;
+package com.spring.async;
 
 import com.record.srcode.config.AppConfig;
 import com.record.srcode.job.ScheduleJob;

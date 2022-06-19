@@ -1,4 +1,4 @@
-package com.record.srcode.tests;
+package com.spring.ioc;
 
 import com.record.srcode.config.AppConfig;
 import com.record.srcode.entry.User;
