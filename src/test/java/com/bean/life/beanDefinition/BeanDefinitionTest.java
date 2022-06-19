@@ -7,6 +7,9 @@ import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
 /**
  * @Package com.bean.life.beanDefinition
  * @ClassName BeanDefinitionTest
@@ -16,9 +19,10 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  */
 public class BeanDefinitionTest {
     private final Logger log = LogManager.getLogger(BeanDefinitionTest.class);
-    
+
     @Test
     public void testBeanDefinition() {
+        Lock lock = new ReentrantLock();
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MyBeanFactoryPostProcessor.class);
         Person person = applicationContext.getBean(Person.class);
         person.setName("name string");
