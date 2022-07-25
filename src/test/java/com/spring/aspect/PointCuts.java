@@ -4,11 +4,11 @@ import org.aspectj.lang.annotation.Pointcut;
 
 public class PointCuts {
 
-    @Pointcut(value = "execution(public * com.aspect.controller..*.*(..))")
+    @Pointcut(value = "execution(public * com.record.srcode.controller..*.*(..))")
     public void aopDemo() {
     }
 
-    @Pointcut(value = "@annotation(com.aspect.log.ControllerWebLog)")
+    @Pointcut(value = "@annotation(com.record.srcode.log.ControllerWebLog)")
     public void webLog() {
     }
 }
