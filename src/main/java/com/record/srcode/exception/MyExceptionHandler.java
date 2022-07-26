@@ -12,8 +12,6 @@ public class MyExceptionHandler {
         Response result = new Response();
         result.setReturnCode(100000);
         result.setReturnMsg("MyExceptionHandler。" + testException.getMessage());
-        System.out.println("----------------" + result);
-//        return "MyExceptionHandler." + testException.getMessage();
         return result;
     }
 }

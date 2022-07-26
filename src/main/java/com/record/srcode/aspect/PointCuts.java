@@ -1,4 +1,4 @@
-package com.spring.aspect;
+package com.record.srcode.aspect;
 
 import org.aspectj.lang.annotation.Pointcut;
 

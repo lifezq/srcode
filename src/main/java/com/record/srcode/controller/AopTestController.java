@@ -23,13 +23,6 @@ public class AopTestController {
 
         // case 2
         System.out.println("test OK");
-        return new Response() {
-            private static final long serialVersionUID = -4582432249015089027L;
-
-            {
-                this.setReturnCode(111);
-                this.setReturnMsg("mock a Result");
-            }
-        };
+        return Response.builder().returnCode(200).returnMsg("mock a Result").returnUserMsg("ok").build();
     }
 }

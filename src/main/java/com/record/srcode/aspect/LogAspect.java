@@ -1,4 +1,4 @@
-package com.spring.aspect;
+package com.record.srcode.aspect;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class LogAspect {
 
-    @Around(value = "com.spring.aspect.PointCuts.webLog()")
+    @Around(value = "com.record.srcode.aspect.PointCuts.webLog()")
     public void around(ProceedingJoinPoint pjp) throws Throwable {
         System.out.println("[WEB日志] around advise 1");
         pjp.proceed();
