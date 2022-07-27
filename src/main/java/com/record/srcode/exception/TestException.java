@@ -1,6 +1,6 @@
 package com.record.srcode.exception;
 
-public class TestException extends Exception {
+public class TestException extends RuntimeException {
     private static final long serialVersionUID = -7070978581654640287L;
     //异常信息
     private String message;

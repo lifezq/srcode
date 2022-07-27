@@ -17,10 +17,11 @@ public class Aspect2 {
     }
 
     @Around(value = "com.record.srcode.aspect.PointCuts.aopDemo()")
-    public void around(ProceedingJoinPoint pjp) throws Throwable {
+    public Object around(ProceedingJoinPoint pjp) throws Throwable {
         System.out.println("[Aspect2] around advise 1");
-        pjp.proceed();
+        Object ret = pjp.proceed();
         System.out.println("[Aspect2] around advise2");
+        return ret;
     }
 
     @AfterReturning(value = "com.record.srcode.aspect.PointCuts.aopDemo()")

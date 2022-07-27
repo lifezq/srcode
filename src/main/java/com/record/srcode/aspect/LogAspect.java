@@ -12,9 +12,10 @@ import org.springframework.stereotype.Component;
 public class LogAspect {
 
     @Around(value = "com.record.srcode.aspect.PointCuts.webLog()")
-    public void around(ProceedingJoinPoint pjp) throws Throwable {
+    public Object around(ProceedingJoinPoint pjp) throws Throwable {
         System.out.println("[WEB日志] around advise 1");
-        pjp.proceed();
+        Object ret = pjp.proceed();
         System.out.println("[WEB日志] around advise2");
+        return ret;
     }
 }

@@ -15,8 +15,10 @@
     <description>Spring SRC project for Spring Boot</description>
 
     <properties>
+        <parent.version>2.4.0</parent.version>
         <java.version>11</java.version>
         <fastjson.version>1.2.79</fastjson.version>
+        <mybatisplus.version>3.5.2</mybatisplus.version>
     </properties>
 
     <dependencies>
@@ -70,13 +72,20 @@
             <artifactId>fastjson</artifactId>
             <version>${fastjson.version}</version>
         </dependency>
+
+        <!-- mybatis plus -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>${mybatisplus.version}</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>2.4.0</version>
+                <version>${parent.version}</version>
             </plugin>
 
             <plugin>
