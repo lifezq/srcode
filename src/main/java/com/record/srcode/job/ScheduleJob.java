@@ -3,8 +3,8 @@ package com.record.srcode.job;
 
 import com.record.srcode.dto.BoardCumulativeEmission;
 import com.record.srcode.dto.BoardTimeTrend;
-import generator.po.BoardCarbonEmission;
-import generator.service.BoardCarbonEmissionService;
+import generator.po.EmissionBoard;
+import generator.service.EmissionBoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -14,7 +14,7 @@ import java.util.List;
 @Component
 public class ScheduleJob {
     @Autowired
-    BoardCarbonEmissionService boardCarbonEmissionService;
+    EmissionBoardService emissionBoardService;
 
     @Scheduled(fixedDelay = 5000)
     public void s0() {
@@ -33,19 +33,19 @@ public class ScheduleJob {
 
     @Scheduled(fixedDelay = 1000000)
     public void s3() {
-        BoardCarbonEmission boardCarbonEmission = boardCarbonEmissionService.findById(2);
-        System.out.println(boardCarbonEmission);
+        EmissionBoard emissionBoard = emissionBoardService.findById(2);
+        System.out.println(emissionBoard);
 
-        boardCarbonEmission = boardCarbonEmissionService.boradOne(2);
-        System.out.println(boardCarbonEmission);
+        emissionBoard = emissionBoardService.boradOne(2);
+        System.out.println(emissionBoard);
 
         String beginTime = "2022-07-01 00:00:03";
         String endTime = "2022-07-18 23:59:59";
 
-        List<BoardTimeTrend> boardTimeTrend = boardCarbonEmissionService.boardTimeTrend(beginTime, endTime);
+        List<BoardTimeTrend> boardTimeTrend = emissionBoardService.boardTimeTrend(beginTime, endTime);
         boardTimeTrend.forEach(x -> System.out.printf("%s \n", x));
 
-        List<BoardCumulativeEmission> boardCumulativeEmission = boardCarbonEmissionService.
+        List<BoardCumulativeEmission> boardCumulativeEmission = emissionBoardService.
                 boardCumulativeEmission(beginTime, endTime);
         boardCumulativeEmission.forEach(x -> System.out.printf("%s \n", x));
     }
