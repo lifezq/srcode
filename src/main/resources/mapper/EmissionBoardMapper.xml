@@ -2,14 +2,12 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="generator.mapper.BoardCarbonEmissionMapper">
+<mapper namespace="generator.mapper.EmissionBoardMapper">
 
-    <resultMap id="BaseResultMap" type="generator.po.BoardCarbonEmission">
+    <resultMap id="BaseResultMap" type="generator.po.EmissionBoard">
         <id property="id" column="id" jdbcType="INTEGER"/>
         <result property="modelId" column="model_id" jdbcType="INTEGER"/>
         <result property="trackId" column="track_id" jdbcType="INTEGER"/>
-        <result property="emissionSourceId" column="emission_source_id" jdbcType="INTEGER"/>
-        <result property="deviceId" column="device_id" jdbcType="VARCHAR"/>
         <result property="computeValue" column="compute_value" jdbcType="DOUBLE"/>
         <result property="cumulativeValue" column="cumulative_value" jdbcType="DOUBLE"/>
         <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
@@ -19,40 +17,33 @@
     <sql id="Base_Column_List">
         id
         ,model_id,track_id,
-        emission_source_id,device_id,compute_value,
-        cumulative_value,update_time,create_time
+        compute_value,cumulative_value,update_time,
+        create_time
     </sql>
 
     <update id="updateEmissionByTrackId">
-        update board_carbon_emission
+        update emission_board
         set track_id=#{to}
         where track_id = #{from};
     </update>
-
     <update id="updateTrackByTrackId">
-        update cb_carbon_track
+        update emission_track
         set id=#{to}
         where id = #{from};
     </update>
 
-
-    <select id="boradOne" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <select id="boradOne" resultType="generator.po.EmissionBoard">
         select
         <include refid="Base_Column_List"></include>
-        from board_carbon_emission
+        from emission_board
         where id = #{id};
     </select>
-
     <select id="boardCumulativeEmission" resultType="com.record.srcode.dto.BoardCumulativeEmission">
-        SELECT t1.track_id, t1.emission_source_id, SUM(t1.compute_value) AS compute_value
-        FROM board_carbon_emission AS t1
-                 LEFT JOIN cb_carbon_track AS t2 ON t1.track_id = t2.id
-                 LEFT JOIN cb_data_model AS t3 ON t1.model_id = t3.id
-                 LEFT JOIN cb_emission_source AS t4 ON t1.emission_source_id = t4.id
+        SELECT t1.track_id, SUM(t1.compute_value) AS compute_value
+        FROM emission_board AS t1
+                 LEFT JOIN emission_track AS t2 ON t1.track_id = t2.id
         WHERE <![CDATA[ t1.create_time > #{beginTime}
           AND t1.create_time < #{endTime} ]]> AND t2.state = 1
-          AND t3.id > 0
-          AND t4.id > 0
-        GROUP BY t1.track_id, t1.emission_source_id;
+        GROUP BY t1.track_id;
     </select>
 </mapper>

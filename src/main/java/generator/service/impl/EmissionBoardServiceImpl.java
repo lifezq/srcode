@@ -4,9 +4,9 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.record.srcode.dto.BoardCumulativeEmission;
 import com.record.srcode.dto.BoardTimeTrend;
 import com.record.srcode.exception.TestException;
-import generator.mapper.BoardCarbonEmissionMapper;
-import generator.po.BoardCarbonEmission;
-import generator.service.BoardCarbonEmissionService;
+import generator.mapper.EmissionBoardMapper;
+import generator.po.EmissionBoard;
+import generator.service.EmissionBoardService;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,21 +14,21 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- * @author Ryan
- * @description 针对表【board_carbon_emission(碳排放看板表)】的数据库操作Service实现
- * @createDate 2022-07-27 14:22:54
+ * @author lenovo
+ * @description 针对表【emission_board(排放看板表)】的数据库操作Service实现
+ * @createDate 2022-07-27 18:22:19
  */
 @Service
-public class BoardCarbonEmissionServiceImpl extends ServiceImpl<BoardCarbonEmissionMapper, BoardCarbonEmission>
-        implements BoardCarbonEmissionService {
+public class EmissionBoardServiceImpl extends ServiceImpl<EmissionBoardMapper, EmissionBoard>
+        implements EmissionBoardService {
 
     @Override
-    public BoardCarbonEmission findById(long id) {
+    public EmissionBoard findById(long id) {
         return this.getBaseMapper().findById(id);
     }
 
     @Override
-    public BoardCarbonEmission boradOne(@Param("id") long id) {
+    public EmissionBoard boradOne(@Param("id") long id) {
         return this.getBaseMapper().boradOne(id);
     }
 
