@@ -1,33 +1,35 @@
-package generator.po;
+package com.record.srcode.po;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.Date;
-import lombok.Data;
 
 /**
  * 排放看板表
+ *
  * @TableName emission_board
  */
-@TableName(value ="emission_board")
+@TableName(value = "emission_board")
 @Data
 public class EmissionBoard implements Serializable {
     /**
-     * 
+     *
      */
     @TableId(type = IdType.AUTO)
     private Integer id;
 
     /**
-     * 
+     *
      */
     private Integer modelId;
 
     /**
-     * 
+     *
      */
     private Integer trackId;
 
@@ -42,12 +44,12 @@ public class EmissionBoard implements Serializable {
     private Double cumulativeValue;
 
     /**
-     * 
+     *
      */
     private Date updateTime;
 
     /**
-     * 
+     *
      */
     private Date createTime;
 
@@ -67,12 +69,12 @@ public class EmissionBoard implements Serializable {
         }
         EmissionBoard other = (EmissionBoard) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
-            && (this.getModelId() == null ? other.getModelId() == null : this.getModelId().equals(other.getModelId()))
-            && (this.getTrackId() == null ? other.getTrackId() == null : this.getTrackId().equals(other.getTrackId()))
-            && (this.getComputeValue() == null ? other.getComputeValue() == null : this.getComputeValue().equals(other.getComputeValue()))
-            && (this.getCumulativeValue() == null ? other.getCumulativeValue() == null : this.getCumulativeValue().equals(other.getCumulativeValue()))
-            && (this.getUpdateTime() == null ? other.getUpdateTime() == null : this.getUpdateTime().equals(other.getUpdateTime()))
-            && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()));
+                && (this.getModelId() == null ? other.getModelId() == null : this.getModelId().equals(other.getModelId()))
+                && (this.getTrackId() == null ? other.getTrackId() == null : this.getTrackId().equals(other.getTrackId()))
+                && (this.getComputeValue() == null ? other.getComputeValue() == null : this.getComputeValue().equals(other.getComputeValue()))
+                && (this.getCumulativeValue() == null ? other.getCumulativeValue() == null : this.getCumulativeValue().equals(other.getCumulativeValue()))
+                && (this.getUpdateTime() == null ? other.getUpdateTime() == null : this.getUpdateTime().equals(other.getUpdateTime()))
+                && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()));
     }
 
     @Override

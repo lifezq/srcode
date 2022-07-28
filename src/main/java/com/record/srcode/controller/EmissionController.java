@@ -2,7 +2,7 @@ package com.record.srcode.controller;
 
 import com.record.srcode.bo.Response;
 import com.record.srcode.exception.TestException;
-import generator.service.EmissionBoardService;
+import com.record.srcode.service.EmissionBoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="generator.mapper.EmissionBoardMapper">
+<mapper namespace="com.record.srcode.mapper.EmissionBoardMapper">
 
-    <resultMap id="BaseResultMap" type="generator.po.EmissionBoard">
+    <resultMap id="BaseResultMap" type="com.record.srcode.po.EmissionBoard">
         <id property="id" column="id" jdbcType="INTEGER"/>
         <result property="modelId" column="model_id" jdbcType="INTEGER"/>
         <result property="trackId" column="track_id" jdbcType="INTEGER"/>
@@ -32,7 +32,7 @@
         where id = #{from};
     </update>
 
-    <select id="boradOne" resultType="generator.po.EmissionBoard">
+    <select id="boradOne" resultType="com.record.srcode.po.EmissionBoard">
         select
         <include refid="Base_Column_List"></include>
         from emission_board

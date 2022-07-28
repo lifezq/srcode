@@ -1,4 +1,4 @@
-package com.collections.list;
+package com.java.collections.list;
 
 import org.junit.jupiter.api.Test;
 

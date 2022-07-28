@@ -3,8 +3,8 @@ package com.record.srcode.job;
 
 import com.record.srcode.dto.BoardCumulativeEmission;
 import com.record.srcode.dto.BoardTimeTrend;
-import generator.po.EmissionBoard;
-import generator.service.EmissionBoardService;
+import com.record.srcode.po.EmissionBoard;
+import com.record.srcode.service.EmissionBoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;

@@ -1,12 +1,12 @@
-package generator.service.impl;
+package com.record.srcode.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.record.srcode.dto.BoardCumulativeEmission;
 import com.record.srcode.dto.BoardTimeTrend;
 import com.record.srcode.exception.TestException;
-import generator.mapper.EmissionBoardMapper;
-import generator.po.EmissionBoard;
-import generator.service.EmissionBoardService;
+import com.record.srcode.mapper.EmissionBoardMapper;
+import com.record.srcode.po.EmissionBoard;
+import com.record.srcode.service.EmissionBoardService;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

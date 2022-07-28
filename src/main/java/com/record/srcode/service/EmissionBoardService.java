@@ -1,10 +1,10 @@
-package generator.service;
+package com.record.srcode.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.record.srcode.dto.BoardCumulativeEmission;
 import com.record.srcode.dto.BoardTimeTrend;
 import com.record.srcode.exception.TestException;
-import generator.po.EmissionBoard;
+import com.record.srcode.po.EmissionBoard;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

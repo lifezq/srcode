@@ -19,6 +19,6 @@ public class MyBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
 
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
-        System.out.println("postProcessBeanFactory 扩展方法--可进行修改beanDefinition的定义信息");
+        System.out.println("BeanFactoryPostProcessor.postProcessBeanFactory 扩展方法--可进行修改beanDefinition的定义信息");
     }
 }

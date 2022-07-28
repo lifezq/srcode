@@ -1,9 +1,9 @@
-package generator.mapper;
+package com.record.srcode.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.record.srcode.dto.BoardCumulativeEmission;
 import com.record.srcode.dto.BoardTimeTrend;
-import generator.po.EmissionBoard;
+import com.record.srcode.po.EmissionBoard;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
@@ -13,7 +13,7 @@ import java.util.List;
  * @author lenovo
  * @description 针对表【emission_board(排放看板表)】的数据库操作Mapper
  * @createDate 2022-07-27 18:22:19
- * @Entity generator.po.EmissionBoard
+ * @Entity com.record.srcode.po.EmissionBoard
  */
 public interface EmissionBoardMapper extends BaseMapper<EmissionBoard> {
     @Select("SELECT * from emission_board where id=#{id}")
@@ -28,7 +28,8 @@ public interface EmissionBoardMapper extends BaseMapper<EmissionBoard> {
             " GROUP BY t1.track_id,ym;")
     List<BoardTimeTrend> boardTimeTrend(@Param("beginTime") String beginTime, @Param("endTime") String endTime);
 
-    List<BoardCumulativeEmission> boardCumulativeEmission(@Param("beginTime") String beginTime, @Param("endTime") String endTime);
+    List<BoardCumulativeEmission> boardCumulativeEmission(
+            @Param("beginTime") String beginTime, @Param("endTime") String endTime);
 
     int updateEmissionByTrackId(@Param("from") long from, @Param("to") long to);
 
