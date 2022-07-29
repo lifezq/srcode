@@ -1,6 +1,6 @@
 package com.spring.ioc;
 
-import com.record.srcode.config.AppConfig;
+import com.record.srcode.config.AsyncConfig;
 import com.record.srcode.entry.User;
 import com.record.srcode.entry.impl.BusinessPerson;
 import org.junit.jupiter.api.Test;
@@ -19,7 +19,7 @@ public class IocTest {
 
     @Test
     public void personTest() {
-        ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(AsyncConfig.class);
         User u = ctx.getBean(User.class);
         System.out.printf("编号:%s\n", u.getId());
         System.out.printf("名称:%s\n", u.getUserName());

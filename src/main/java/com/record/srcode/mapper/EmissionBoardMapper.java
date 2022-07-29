@@ -1,6 +1,7 @@
 package com.record.srcode.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.record.srcode.dto.BoardCumulativeEmission;
 import com.record.srcode.dto.BoardTimeTrend;
 import com.record.srcode.po.EmissionBoard;
@@ -34,6 +35,8 @@ public interface EmissionBoardMapper extends BaseMapper<EmissionBoard> {
     int updateEmissionByTrackId(@Param("from") long from, @Param("to") long to);
 
     int updateTrackByTrackId(@Param("from") long from, @Param("to") long to);
+
+    List<EmissionBoard> listByPage(@Param("page") Page page);
 }
 
 

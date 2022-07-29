@@ -46,4 +46,9 @@
           AND t1.create_time < #{endTime} ]]> AND t2.state = 1
         GROUP BY t1.track_id;
     </select>
+    <select id="listByPage" resultType="com.record.srcode.po.EmissionBoard">
+        select
+        <include refid="Base_Column_List"></include>
+        from emission_board
+    </select>
 </mapper>

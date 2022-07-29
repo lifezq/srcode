@@ -1,6 +1,7 @@
 package com.record.srcode.job;
 
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.record.srcode.dto.BoardCumulativeEmission;
 import com.record.srcode.dto.BoardTimeTrend;
 import com.record.srcode.po.EmissionBoard;
@@ -48,5 +49,16 @@ public class ScheduleJob {
         List<BoardCumulativeEmission> boardCumulativeEmission = emissionBoardService.
                 boardCumulativeEmission(beginTime, endTime);
         boardCumulativeEmission.forEach(x -> System.out.printf("%s \n", x));
+
+        Page page = new Page(2, 5);
+        List<EmissionBoard> items = emissionBoardService.listByPage(page);
+        System.out.println("list result count:" + items.size());
+
+        System.out.println("当前页码:" + page.getCurrent());
+        System.out.println("当前的条数:" + page.getSize());
+        System.out.println("总条数:" + page.getTotal());
+        System.out.println("总页数:" + page.getPages());
+        System.out.println("是否有上一页:" + page.hasPrevious());
+        System.out.println("是否有下一页:" + page.hasNext());
     }
 }

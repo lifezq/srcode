@@ -1,5 +1,6 @@
 package com.record.srcode.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.record.srcode.dto.BoardCumulativeEmission;
 import com.record.srcode.dto.BoardTimeTrend;
@@ -25,4 +26,6 @@ public interface EmissionBoardService extends IService<EmissionBoard> {
                                                           @Param("endTime") String endTime);
 
     void updateTransaction(@Param("from") long from, @Param("to") long to) throws TestException;
+
+    List<EmissionBoard> listByPage(@Param("page") Page page);
 }

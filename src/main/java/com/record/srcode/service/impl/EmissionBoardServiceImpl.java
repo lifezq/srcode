@@ -1,5 +1,6 @@
 package com.record.srcode.service.impl;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.record.srcode.dto.BoardCumulativeEmission;
 import com.record.srcode.dto.BoardTimeTrend;
@@ -70,6 +71,11 @@ public class EmissionBoardServiceImpl extends ServiceImpl<EmissionBoardMapper, E
         } catch (Exception e) {
             throw new TestException(e.getMessage());
         }
+    }
+
+    @Override
+    public List<EmissionBoard> listByPage(@Param("page") Page page) {
+        return this.getBaseMapper().listByPage(page);
     }
 }
 
