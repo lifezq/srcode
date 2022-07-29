@@ -12,6 +12,10 @@ import java.util.concurrent.ThreadPoolExecutor;
 @Configuration
 public class AsyncConfig implements AsyncConfigurer {
 
+    AsyncConfig() {
+        System.out.println("AsyncConfig init");
+    }
+
     @Override
     public Executor getAsyncExecutor() {
         //线程池
