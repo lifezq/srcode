@@ -68,15 +68,12 @@ public class ReferenceTest {
 
         List<String> list = new ArrayList<>();
 
-        Thread t1 = new Thread() {
-            public void run() {
-
-                for (int i = 0; i < 1000000; i++) {
-                    list.add("123");
-                    System.out.println("-" + list.size() + "---" + phantomReference.get());
-                }
+        Thread t1 = new Thread(() -> {
+            for (int i = 0; i < 1000000; i++) {
+                list.add("123");
+                System.out.println("-" + list.size() + "---" + phantomReference.get());
             }
-        };
+        });
 
         t1.start();
 

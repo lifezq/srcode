@@ -1,6 +1,5 @@
 package com.java.collections.list;
 
-import lombok.SneakyThrows;
 import org.junit.jupiter.api.Test;
 
 import java.util.Comparator;
@@ -86,28 +85,30 @@ public class QueueTest {
         //必须两个线程一个存，一个取，一个存一个取....
         CountDownLatch countDownLatch = new CountDownLatch(2);
         SynchronousQueue<Integer> q = new SynchronousQueue<>();
-        Thread t1 = new Thread() {
-            @SneakyThrows
-            public void run() {
-                for (int i = 0; i < 10; i++) {
+        Thread t1 = new Thread(() -> {
+            for (int i = 0; i < 10; i++) {
+                try {
                     q.put(i);
-                    System.out.println("添加元素：" + i);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
-                countDownLatch.countDown();
+                System.out.println("添加元素：" + i);
             }
-        };
+            countDownLatch.countDown();
+        });
         t1.start();
 
 
-        Thread t2 = new Thread() {
-            @SneakyThrows
-            public void run() {
-                for (int i = 0; i < 10; i++) {
+        Thread t2 = new Thread(() -> {
+            for (int i = 0; i < 10; i++) {
+                try {
                     System.out.println("出队元素：" + q.take());
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
-                countDownLatch.countDown();
             }
-        };
+            countDownLatch.countDown();
+        });
         t2.start();
 
         countDownLatch.await();
