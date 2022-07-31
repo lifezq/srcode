@@ -20,6 +20,7 @@
         <fastjson.version>2.0.10</fastjson.version>
         <mybatisplus.version>3.5.2</mybatisplus.version>
         <mysql-connector.version>8.0.30</mysql-connector.version>
+        <commons-lang3.version>3.12.0</commons-lang3.version>
     </properties>
 
     <dependencies>
@@ -88,6 +89,13 @@
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>${mybatisplus.version}</version>
+        </dependency>
+
+        <!-- apache commons-lang3-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang3.version}</version>
         </dependency>
     </dependencies>
     <build>
