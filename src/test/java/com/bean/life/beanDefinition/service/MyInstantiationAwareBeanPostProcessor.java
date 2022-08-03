@@ -44,7 +44,7 @@ public class MyInstantiationAwareBeanPostProcessor implements InstantiationAware
     // 属性修改 5.1以后该方法废弃，由上postProcessProperties替代
     @Override
     public PropertyValues postProcessPropertyValues(PropertyValues pvs, PropertyDescriptor[] pds, Object bean, String beanName) throws BeansException {
-        System.out.println("InstantiationAwareBeanPostProcessor.postProcessPropertyValues被调用了---------beanName:" + beanName);
+        System.out.println("InstantiationAwareBeanPostProcessor.postProcessPropertyValues被调用了----5.1后该方法废弃-----beanName:" + beanName);
         // 此方法可对bean中的属性值进行、添加、修改、删除操作；
         // 对属性值进行修改，如果postProcessAfterInstantiation方法返回false，该方法可能不会被调用，
         return pvs;

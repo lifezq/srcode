@@ -57,12 +57,12 @@ public class EmissionBoardDTO implements Serializable {
 
     public EmissionBoard convertToEmissionBoard() {
         EmissionBoardDTOConvert emissionBoardDTOConvert = new EmissionBoardDTOConvert();
-        return emissionBoardDTOConvert.doForward(this);
+        return emissionBoardDTOConvert.convert(this);
     }
 
     public EmissionBoardDTO convertFor(EmissionBoard emissionBoard) {
         EmissionBoardDTOConvert emissionBoardDTOConvert = new EmissionBoardDTOConvert();
-        return emissionBoardDTOConvert.doBackward(emissionBoard);
+        return emissionBoardDTOConvert.reverse().convert(emissionBoard);
     }
 
 

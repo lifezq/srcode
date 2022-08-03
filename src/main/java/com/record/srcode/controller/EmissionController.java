@@ -32,6 +32,7 @@ public class EmissionController {
         UpdateWrapper<EmissionBoard> updateWrapper = new UpdateWrapper<>();
         updateWrapper.setEntity(emissionBoardDTO.convertToEmissionBoard());
         emissionBoardService.update(updateWrapper);
-        return Response.builder().returnCode(200).returnMsg("edit transaction data").returnUserMsg("ok").build();
+        return Response.builder().returnCode(200).returnMsg("edit transaction data").
+                returnUserMsg("ok").data(emissionBoardDTO).build();
     }
 }
