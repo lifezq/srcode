@@ -1,4 +1,4 @@
-package com.record.srcode.entry;
+package com.record.srcode.entity;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;

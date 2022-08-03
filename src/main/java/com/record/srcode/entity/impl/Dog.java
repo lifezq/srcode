@@ -1,6 +1,6 @@
-package com.record.srcode.entry.impl;
+package com.record.srcode.entity.impl;
 
-import com.record.srcode.entry.Animal;
+import com.record.srcode.entity.Animal;
 import org.springframework.stereotype.Component;
 
 @Component

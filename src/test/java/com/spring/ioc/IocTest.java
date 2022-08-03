@@ -1,8 +1,8 @@
 package com.spring.ioc;
 
 import com.record.srcode.config.AsyncConfig;
-import com.record.srcode.entry.User;
-import com.record.srcode.entry.impl.BusinessPerson;
+import com.record.srcode.entity.User;
+import com.record.srcode.entity.impl.BusinessPerson;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
