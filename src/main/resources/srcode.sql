@@ -1,15 +1,13 @@
 -- --------------------------------------------------------
 -- 主机:                           127.0.0.1
--- 服务器版本:                        8.0.29 - MySQL Community Server - GPL
+-- 服务器版本:                        8.0.30 - MySQL Community Server - GPL
 -- 服务器操作系统:                      Win64
--- HeidiSQL 版本:                  12.0.0.6468
+-- HeidiSQL 版本:                  11.3.0.6295
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET NAMES utf8 */;
 /*!50503 SET NAMES utf8mb4 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
@@ -37,6 +35,7 @@ CREATE TABLE IF NOT EXISTS `emission_board` (
 ) ENGINE=InnoDB AUTO_INCREMENT=256 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC COMMENT='排放看板表';
 
 -- 正在导出表  srcode.emission_board 的数据：~255 rows (大约)
+/*!40000 ALTER TABLE `emission_board` DISABLE KEYS */;
 INSERT INTO `emission_board` (`id`, `model_id`, `track_id`, `compute_value`, `cumulative_value`, `update_time`, `create_time`) VALUES
 	(1, 36, 79, 3201.493959, 3201.493959, '2022-07-14 17:10:54', '2022-07-14 17:10:54'),
 	(2, 17, 82, 2602.3336504900003, 2602.3336504900003, '2022-07-14 17:10:57', '2022-07-14 17:10:57'),
@@ -293,6 +292,7 @@ INSERT INTO `emission_board` (`id`, `model_id`, `track_id`, `compute_value`, `cu
 	(253, 19, 66, 0, 194.71738748, '2022-07-18 00:01:11', '2022-07-18 00:01:11'),
 	(254, 17, 82, 0, 1118.64156604, '2022-07-18 00:01:14', '2022-07-18 00:01:14'),
 	(255, 17, 49, 0, 195611.6596760023, '2022-07-27 18:36:58', '2022-07-18 00:01:15');
+/*!40000 ALTER TABLE `emission_board` ENABLE KEYS */;
 
 -- 导出  表 srcode.emission_track 结构
 CREATE TABLE IF NOT EXISTS `emission_track` (
@@ -313,14 +313,34 @@ CREATE TABLE IF NOT EXISTS `emission_track` (
 ) ENGINE=InnoDB AUTO_INCREMENT=500000 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC COMMENT='排放轨迹';
 
 -- 正在导出表  srcode.emission_track 的数据：~5 rows (大约)
+/*!40000 ALTER TABLE `emission_track` DISABLE KEYS */;
 INSERT INTO `emission_track` (`id`, `tenant_id`, `name`, `code`, `description`, `state`, `version`, `start_at`, `created_by`, `create_time`, `updated_by`, `update_time`) VALUES
 	(49, 'defaultTenantId', '测试数据', 'TR5VLXBJC', '', 1, 0, '2020-01-01 00:00:00', 'defaultUserId', '2022-06-06 17:25:06', 'defaultUserId', '2022-07-27 18:36:58'),
 	(56, 'defaultTenantId', '示例数据', 'T2MIFUTG2', '', 0, 0, '', 'defaultUserId', '2022-06-07 11:37:07', 'defaultUserId', '2022-07-27 18:19:32'),
 	(66, 'defaultTenantId', '测试', 'TH7E7UUT4', '', 1, 0, '2022-01-01 00:00:00', 'defaultUserId', '2022-06-09 20:23:39', 'defaultUserId', '2022-06-09 21:37:21'),
 	(79, 'defaultTenantId', '测试111', 'TZSJZJSHU', '', 1, 0, '2022-07-01 00:00:00', 'defaultUserId', '2022-07-08 09:57:08', 'defaultUserId', '2022-07-08 10:02:33'),
 	(82, 'defaultTenantId', 'test', 'TH37GXAUF', '', 1, 0, '2011-07-12 17:46:36', 'defaultUserId', '2022-07-11 17:11:41', 'defaultUserId', '2022-07-11 17:46:44');
+/*!40000 ALTER TABLE `emission_track` ENABLE KEYS */;
 
-/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
+-- 导出  表 srcode.user 结构
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` bigint NOT NULL COMMENT '主键ID',
+  `name` varchar(30) DEFAULT NULL COMMENT '姓名',
+  `age` int DEFAULT NULL COMMENT '年龄',
+  `email` varchar(50) DEFAULT NULL COMMENT '邮箱',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+-- 正在导出表  srcode.user 的数据：~5 rows (大约)
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` (`id`, `name`, `age`, `email`) VALUES
+	(1, '张三', 18, 'test1@baomidou.com'),
+	(2, '李四', 20, 'test2@baomidou.com'),
+	(3, '王五', 28, 'test3@baomidou.com'),
+	(4, '赵六', 21, 'test4@baomidou.com'),
+	(5, '杨洋', 24, 'test5@baomidou.com');
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
