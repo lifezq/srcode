@@ -1,4 +1,4 @@
-package com.reflect;
+package com.java.reflect;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import java.lang.reflect.*;
 
 /**
- * @Package com.reflect
+ * @Package com.java.reflect
  * @ClassName ReflectTest
  * @Description TODO
  * @Author lifez
