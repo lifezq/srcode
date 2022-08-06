@@ -1,6 +1,6 @@
 package com.java.convert;
 
-import com.record.srcode.convert.EmissionBoardMapper;
+import com.record.srcode.convert.EmissionBoardConvertor;
 import com.record.srcode.dto.EmissionBoardDTO;
 import com.record.srcode.po.EmissionBoard;
 import org.junit.jupiter.api.Test;
@@ -19,7 +19,7 @@ public class ConvertTest {
         EmissionBoard emissionBoard = new EmissionBoard().setId(11).
                 setComputeValue(88.8).setCumulativeValue(101.26).
                 setModelId(87).setTrackId(99);
-        EmissionBoardDTO emissionBoardDTO = EmissionBoardMapper.INSTANCE.toEmissionBoardDTO(emissionBoard);
+        EmissionBoardDTO emissionBoardDTO = EmissionBoardConvertor.INSTANCE.toEmissionBoardDTO(emissionBoard);
         System.out.println(emissionBoardDTO);
     }
 }

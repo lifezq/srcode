@@ -15,8 +15,8 @@ import org.mapstruct.factory.Mappers;
  * @Date 2022/8/6
  */
 @Mapper
-public interface EmissionBoardMapper {
-    EmissionBoardMapper INSTANCE = Mappers.getMapper(EmissionBoardMapper.class);
+public interface EmissionBoardConvertor {
+    EmissionBoardConvertor INSTANCE = Mappers.getMapper(EmissionBoardConvertor.class);
 
     @Mappings(value = {
             @Mapping(target = "modelName", expression = "java(\"模型名称1\")"),
