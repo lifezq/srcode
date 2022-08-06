@@ -12,6 +12,10 @@ public interface InterfaceTest {
 
     public abstract String topMethod();
 
+    public static String staticMethod() {
+        return "interface static method";
+    }
+
     public default String defaultMethod() {
         return "default";
     }

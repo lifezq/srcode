@@ -14,8 +14,12 @@ public abstract class AbstractorTest {
     private String name = "default abstract";
 
 
-    public abstract String topMethod();
-    
+    public abstract String firstMethod();
+
+    public static String staticMethod() {
+        return "abstract static method";
+    }
+
     public String secondMethod() {
         return "second";
     }

@@ -21,5 +21,6 @@ public class InterfaceTests implements InterfaceTest {
         System.out.println(value);
         System.out.println(this.defaultMethod());
         System.out.println(this.topMethod());
+        System.out.println(InterfaceTest.staticMethod());
     }
 }
