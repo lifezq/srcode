@@ -24,6 +24,7 @@
         <guava.version>31.1-jre</guava.version>
         <mybatis-dynamic.version>3.5.1</mybatis-dynamic.version>
         <mapstruct.version>1.5.2.Final</mapstruct.version>
+        <lombok.version>1.18.24</lombok.version>
     </properties>
 
     <dependencies>
@@ -57,6 +58,7 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
+            <version>${lombok.version}</version>
         </dependency>
         <!-- AOP 依赖包导入，否则会报: 程序包org.aspectj.lang不存在-->
         <dependency>

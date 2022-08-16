@@ -16,6 +16,7 @@ import org.mapstruct.factory.Mappers;
  */
 @Mapper
 public interface EmissionBoardConvertor {
+    // 接口中常量默认修饰符 public static final
     EmissionBoardConvertor INSTANCE = Mappers.getMapper(EmissionBoardConvertor.class);
 
     @Mappings(value = {

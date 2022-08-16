@@ -1,6 +1,5 @@
 package com.spring.async;
 
-import com.record.srcode.config.AsyncConfig;
 import com.record.srcode.job.ScheduleJob;
 import com.record.srcode.service.AsyncTestService;
 import org.junit.jupiter.api.Test;
@@ -13,7 +12,7 @@ public class AsyncTest {
 
     @Test
     public void asyncTest() {
-        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AsyncConfig.class);
+        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AsyncTestConfig.class);
         AsyncTestService u = ctx.getBean(AsyncTestService.class);
         for (Integer i = 0; i < 10; i++) {
             u.executeAsync1(i);
@@ -26,7 +25,7 @@ public class AsyncTest {
     public void scheduleTest() {
         System.out.println("schedule..." + new Date());
 
-        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AsyncConfig.class);
+        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AsyncTestConfig.class);
         ScheduleJob u = ctx.getBean(ScheduleJob.class);
         try {
             Thread.sleep(50000000);
