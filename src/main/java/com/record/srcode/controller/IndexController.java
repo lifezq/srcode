@@ -18,7 +18,7 @@ import java.util.Hashtable;
 @Controller
 public class IndexController {
 
-    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    @RequestMapping(value = {"/", "/index"}, method = RequestMethod.GET)
     public String index(Model model) {
         Hashtable<String, String> vars = new Hashtable<>();
         vars.put("title", "test index page");

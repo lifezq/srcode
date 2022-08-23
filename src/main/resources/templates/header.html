@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title - </title>
+    <link rel="stylesheet" type="text/css" href="./semantic/semantic.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="./semantic/semantic.min.js"></script>
+</head>
+<body>
+<div class="ui menu">
+    <div class="header item"><font style="vertical-align: inherit;"><font
+            style="vertical-align: inherit;">首页</font></font></div>
+    <a class="active item"><font style="vertical-align: inherit;"><font
+            style="vertical-align: inherit;">关联</font></font></a>
+    <a class="item"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">关联</font></font></a>
+    <div class="ui dropdown item" tabindex="0"><font style="vertical-align: inherit;"><font
+            style="vertical-align: inherit;">
+        落下
+    </font></font><i class="dropdown icon"></i>
+        <div class="menu" tabindex="-1">
+            <div class="item"><font style="vertical-align: inherit;"><font
+                    style="vertical-align: inherit;">行动</font></font></div>
+            <div class="item"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">另一个动作</font></font>
+            </div>
+            <div class="item"><font style="vertical-align: inherit;"><font
+                    style="vertical-align: inherit;">这里有别的东西</font></font></div>
+            <div class="divider"></div>
+            <div class="item"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">分离链接</font></font>
+            </div>
+            <div class="divider"></div>
+            <div class="item"><font style="vertical-align: inherit;"><font
+                    style="vertical-align: inherit;">另一个单独的链接</font></font></div>
+        </div>
+    </div>
+    <div class="right menu">
+        <div class="item">
+            <div class="ui action left icon input">
+                <i class="search icon"></i>
+                <input type="text" placeholder="搜索">
+                <button class="ui button"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">提交</font></font>
+                </button>
+            </div>
+        </div>
+        <a class="item" href="/login"><font style="vertical-align: inherit;"><font
+                style="vertical-align: inherit;">登录</font></font></a>
+        <a class="item" href="/logout"><font style="vertical-align: inherit;"><font
+                style="vertical-align: inherit;">退出</font></font></a>
+        <span class="hidden" style="display: none;" th:text="${name}">x</span>
+    </div>
+</div>

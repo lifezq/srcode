@@ -3,16 +3,17 @@ package com.record.srcode.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.DelegatingPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @Package com.record.srcode.config
@@ -39,19 +40,23 @@ public class SecurityConfiguration {
 
     @Bean
     UserDetailsService userDetailsService() {
-        
-        UserDetailsService userDetailsService = (u) -> {
-            if (!u.equals("ryan")) {
-                throw new UsernameNotFoundException("user not found");
-            }
-            SimpleGrantedAuthority simpleGrantedAuthority = new SimpleGrantedAuthority("emission");
-            List<GrantedAuthority> authorities = new ArrayList<>();
-            authorities.add(simpleGrantedAuthority);
-            UserDetails userDetails = new User(u, "123456", authorities);
-            return userDetails;
-        };
 
-        userDetailsService.loadUserByUsername("ryan");
-        return userDetailsService;
+        String encodingId = "bcrypt";
+        Map<String, PasswordEncoder> encoders = new HashMap();
+        encoders.put(encodingId, new BCryptPasswordEncoder());
+
+        PasswordEncoder bCryptPasswordEncoder = new DelegatingPasswordEncoder(encodingId, encoders);
+        User.UserBuilder users = User.builder().passwordEncoder(bCryptPasswordEncoder::encode);
+        UserDetails user = users
+                .username("ryan")
+                .password("123456")
+                .roles("emission")
+                .build();
+        UserDetails admin = users
+                .username("admin")
+                .password("123456")
+                .roles("emission", "ADMIN")
+                .build();
+        return new InMemoryUserDetailsManager(user, admin);
     }
 }

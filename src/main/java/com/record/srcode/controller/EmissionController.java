@@ -35,4 +35,9 @@ public class EmissionController {
         return Response.builder().returnCode(200).returnMsg("edit transaction data").
                 returnUserMsg("ok").data(emissionBoardDTO).build();
     }
+
+    @RequestMapping(value = "/test", method = RequestMethod.GET)
+    public Response test() {
+        return Response.builder().returnCode(200).returnMsg("ok").returnUserMsg("success").build();
+    }
 }
