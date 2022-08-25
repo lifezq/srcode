@@ -29,5 +29,6 @@ public class BeanDefinitionTest {
         person.setAge(22);
         log.info("bean person {}", person);
         applicationContext.close();
+        
     }
 }
