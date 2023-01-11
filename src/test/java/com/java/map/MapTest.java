@@ -8,7 +8,9 @@ import java.util.Hashtable;
 /**
  * @Package com.java.map
  * @ClassName HashmapTest
- * @Description TODO
+ * @Description hashmap
+ * double capacity increased
+ * when the number of nodes next is bigger than 8 and node's number exceeds 64, it's become to treeifyBin
  * @Author lifez
  * @Date 2022/8/6
  */

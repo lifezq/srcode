@@ -8,6 +8,8 @@ import java.util.Collections;
 import java.util.List;
 
 /**
+ * @Description default capacity is 10
+ * capacity increased by 50%
  * @Author Ryan
  * @Date 2022/7/26
  */

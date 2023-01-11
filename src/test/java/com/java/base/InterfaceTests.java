@@ -7,7 +7,9 @@ import org.junit.jupiter.api.Test;
 /**
  * @Package com.java.base
  * @ClassName InterfacerTests
- * @Description TODO
+ * @Description an interface can extend another interface,
+ * once the class implements the extended interface, it must
+ * implement all the methods in which super and extend interfaces.
  * @Author lifez
  * @Date 2022/8/6
  */

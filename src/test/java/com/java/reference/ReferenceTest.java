@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Java （基本数据类型）值传递 和 （数组、类、接口、字符串）共享对象传递（引用传递）
+ * Java （基本数据类型，包括基本类型封装类）值传递 和 （数组、类、接口、字符串）共享对象传递（引用传递）
  *
  * @Desc 强引用
  * @Author Ryan
@@ -18,19 +18,25 @@ public class ReferenceTest {
     @Test
     public void testHardReference() {
         int data = 0;
-        setData(data);
-        System.out.println(data);
+        setData10(data);
+        System.out.println(data);//out: 0
 
         Integer data1 = 1000;
-        setData(data1);
-        System.out.println(data1);
+        setData2000(data1);
+        System.out.println(data1);//out: 1000
+
+        String data2 = "hello";
+        setDataWorld(data2);
+        System.out.println(data2);//out: hello
 
         User user = new User();
         user.setName("joy");
         user.setAge(18);
         System.out.println(user.toString() + System.identityHashCode(user));
         setUser(user);
+        System.out.println(user.toString() + System.identityHashCode(user));
     }
+
 
     @Test
     public void testSoftReference() {
@@ -87,17 +93,20 @@ public class ReferenceTest {
         }
     }
 
-    public void setData(int data) {
+    public void setData10(int data) {
         data = 10;
     }
 
-    public void setData(Integer data) {
+    public void setData2000(Integer data) {
         data = 2000;
+    }
+
+    private void setDataWorld(String data2) {
+        data2 = "world";
     }
 
     public void setUser(User user) {
         user.setName("joy111");
-        System.out.println(System.identityHashCode(user));
     }
 
     @Test
@@ -106,16 +115,16 @@ public class ReferenceTest {
         String s2 = "world";
         String s3 = "helloworld";
         String s4 = s1 + s2;
-        System.out.println(s3 == s4);
-        System.out.println(s3.hashCode());
-        System.out.println(s4.hashCode());
+        System.out.println(s3 == s4);//out: false
+        System.out.println(s3.hashCode());//out: -1524582912
+        System.out.println(s4.hashCode());//out: -1524582912
         //System.identityHashCode(Object)方法可以返回对象的内存地址,不管该对象的类是否重写了hashCode()方法
-        System.out.println(System.identityHashCode(s3));
-        System.out.println(System.identityHashCode(s4));
+        System.out.println(System.identityHashCode(s3));//out: 330382173
+        System.out.println(System.identityHashCode(s4));//out: 680712932
     }
 
 
-    class OOMObject {
+    static class OOMObject {
         private final long[] data = new long[1024 * 1024];
     }
 }

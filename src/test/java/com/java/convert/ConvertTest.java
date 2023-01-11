@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 /**
  * @Package com.java.convert
  * @ClassName ConvertTest
- * @Description 少用或不用BeanUtils.copyPropertys， 相反使用convert替代
+ * @Description 少用或不用BeanUtils.copyPropertys， 相反使用mapstruct.convert替代
  * @Author lifez
  * @Date 2022/8/6
  */
