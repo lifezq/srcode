@@ -6,12 +6,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @EnableAsync
 @EnableScheduling
 @EnableWebSecurity
-@EnableTransactionManagement
+//Note: has enabled the transaction manager by default because of springboot. org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration.
+//@EnableTransactionManagement
 @MapperScan(basePackages = {"com.record.srcode.mapper"})
 @SpringBootApplication
 public class SrcodeApplication {

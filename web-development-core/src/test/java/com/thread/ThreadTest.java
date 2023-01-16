@@ -19,7 +19,7 @@ public class ThreadTest {
 
     @Test
     public void startTest() {
-        log.info("befor thread run...");
+        log.info("before thread run...");
         new Thread(() -> {
             try {
                 Thread.sleep(5000);
@@ -35,7 +35,7 @@ public class ThreadTest {
     public void callTest() {
 
         try {
-            log.info("befor thread run...");
+            log.info("before thread run...");
             ConcurrentTaskExecutor concurrentTaskExecutor = new ConcurrentTaskExecutor();
             Future<Integer> v = concurrentTaskExecutor.submit(new CallTest());
             log.info("after thread run...");
@@ -92,7 +92,7 @@ public class ThreadTest {
     public void threadPool2Test() {
         try {
             ScheduledExecutorService executorService = Executors.newScheduledThreadPool(4);
-            log.info("befor schedule exe...");
+            log.info("before schedule exe...");
             ScheduledFuture<Integer> r = executorService.schedule(new CallTest(), 3, TimeUnit.SECONDS);
             log.info("after schedule exe...");
             Collection<Callable<Integer>> callables = new ArrayList<>();
